@@ -27,7 +27,7 @@ namespace Whathecode.System
 		/// <summary>
 		/// Get the <see cref="TimeSpan" /> constructor which uses a certain amount of time units to initialize the <see cref="TimeSpan" />.
 		/// </summary>
-		/// <param name="unit">The units to use to initialize the <see cref="TimeSpan" />.</param>
+		/// <param name = "unit">The units to use to initialize the <see cref="TimeSpan" />.</param>
 		/// <returns>A function which constructs a <see cref="TimeSpan" /> from an amount of time units.</returns>
 		public static Func<double, TimeSpan> GetTimeSpanConstructor( DateTimePart unit )
 		{

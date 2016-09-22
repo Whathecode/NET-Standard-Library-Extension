@@ -3,24 +3,24 @@ using Whathecode.System;
 using Xunit;
 
 
-namespace Whathecode.System.Tests
+namespace Whathecode.Tests.System
 {
-	public class NoUnmanagedResources : AbstractDisposable
-	{
-		public void PublicInstanceOperation()
-		{
-			// Each public instance method should call this to prevent operations after the object has been disposed.
-			ThrowExceptionIfDisposed();
-		}
-
-		protected override void FreeManagedResources() { }
-
-		protected override void FreeUnmanagedResources() { }
-	}
-
-
 	public class AbstractDisposableTest
     {
+		class NoUnmanagedResources : AbstractDisposable
+		{
+			public void PublicInstanceOperation()
+			{
+				// Each public instance method should call this to prevent operations after the object has been disposed.
+				ThrowExceptionIfDisposed();
+			}
+
+			protected override void FreeManagedResources() { }
+
+			protected override void FreeUnmanagedResources() { }
+		}
+
+
 		[Fact]
 		public void OnDisposedTest()
 		{

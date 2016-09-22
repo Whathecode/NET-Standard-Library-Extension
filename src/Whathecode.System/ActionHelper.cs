@@ -5,12 +5,12 @@ using System.Collections.Generic;
 namespace Whathecode.System
 {
 	/// <summary>
-	/// A helper class to do common <see cref = "Action" /> operations.
+	/// A helper class to do common <see cref="Action" /> operations.
 	/// </summary>
 	public class ActionHelper
 	{
 		/// <summary>
-		/// Lists all the possible <see cref = "Action">Action</see> delegates, linked to the amount of parameters the action has.
+		/// Lists all the possible <see cref="Action">Action</see> delegates, linked to the amount of parameters the action has.
 		/// </summary>
 		static readonly Dictionary<int, Type> ActionTypes = new Dictionary<int, Type>
 		{
