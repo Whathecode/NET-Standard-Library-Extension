@@ -1,0 +1,22 @@
+language: csharp
+
+matrix:
+  include:
+    - os: linux # Ubuntu 14.04
+      dist: trusty
+      sudo: required
+      dotnet: 1.0.0-preview2-003121
+
+script:
+  # Build the soruce
+  - cd src/Whathecode.System
+  - dotnet restore
+  - dotnet build
+  
+  # Back to main
+  - cd ../../
+  
+  # Run tests
+  - cd test/Whathecode.System.Tests
+  - dotnet restore
+  - dotnet test
