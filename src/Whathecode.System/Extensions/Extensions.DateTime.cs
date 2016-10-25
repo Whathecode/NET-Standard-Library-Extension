@@ -47,7 +47,8 @@ namespace Whathecode.System.Extensions
 				part >= DateTimePart.Hour ? source.Hour : 0,
 				part >= DateTimePart.Minute ? source.Minute : 0,
 				part >= DateTimePart.Second ? source.Second : 0,
-				part >= DateTimePart.Millisecond ? source.Millisecond : 0 );
+				part >= DateTimePart.Millisecond ? source.Millisecond : 0,
+				source.Kind );
 		}
 
 		/// <summary>
