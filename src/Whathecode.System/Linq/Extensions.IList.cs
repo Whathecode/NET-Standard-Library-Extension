@@ -1,24 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 
 namespace Whathecode.System.Linq
 {
 	public static partial class Extensions
 	{
-		/// <summary>
-		/// Check whether the last value equals the given value.
-		/// </summary>
-		/// <typeparam name = "T">Type of the values in the list.</typeparam>
-		/// <param name = "source">The source for this extension method.</param>
-		/// <param name = "value">Value to check whether its the last value.</param>
-		/// <returns>True when the given value is last, false otherwise.</returns>
-		public static bool IsLast<T>( this IList<T> source, T value )
-			where T : IComparable
-		{
-			return value.CompareTo( source[ source.Count - 1 ] ) == 0;
-		}
-
 		/// <summary>
 		/// Bypasses a specified number of elements in a sequence and then returns the remaining elements, optimized for IList{T}.
 		/// </summary>

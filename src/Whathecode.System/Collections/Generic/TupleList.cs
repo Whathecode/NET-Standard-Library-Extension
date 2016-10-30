@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Whathecode.System.Extensions;
 
 
 namespace Whathecode.System.Collections.Generic
 {
 	/// <summary>
 	/// A list of 2-tuples, or pairs.
-	/// TODO: C# 6 added a new feature which could make this class superfluous: http://stackoverflow.com/a/27455822/590790
 	/// </summary>
 	/// <typeparam name = "T1">The type of the tuple's first component.</typeparam>
 	/// <typeparam name = "T2">The type of the tuple's second component.</typeparam>

@@ -1,5 +1,4 @@
 ﻿using System;
-using Whathecode.System.Algorithm;
 
 
 namespace Whathecode.System.Diagnostics
@@ -65,13 +64,17 @@ namespace Whathecode.System.Diagnostics
 				throw new ArgumentOutOfRangeException( nameof( times ), "Should be greater than zero." );
 			}
 
-			StatisticsStopwatch stopwatch = null;
-			Loop loop = Loop.NumberOfTimes( times, action );
+			StatisticsStopwatch stopwatch = StatisticsStopwatch.Start( label );
 
-			// Start a new measurement every iteration.
-			loop.Before.First( () => stopwatch = StatisticsStopwatch.Start( label ) );
-			loop.After.AllButLast( () => stopwatch.StartNextMeasurement() );
-			loop.Run();
+			// Perform the action the required amount of times.
+			for ( int i = 0; i < times; ++i )
+			{
+				action();
+				if ( i != times - 1 ) // Start a new measurement every iteration, for all but last.
+				{
+					stopwatch.StartNextMeasurement();
+				}
+			}
 
 			return stopwatch.Stop();
 		}
