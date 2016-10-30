@@ -5,6 +5,9 @@
 	/// </summary>
 	public abstract class AbstractGate
 	{
+		/// <summary>
+		/// Automatically reset the gate after entering.
+		/// </summary>
 		protected bool AutoReset { get; private set; }
 
 
