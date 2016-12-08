@@ -1,6 +1,12 @@
 language: csharp
 solution: NETStandard.Library.Extension.sln
-dotnet: 1.0.0-preview2-003131
+
+matrix:
+  include:
+    - os: linux # Ubuntu 14.04
+      dist: trusty
+      sudo: required
+      dotnet: 1.0.0-preview2-003131
 
 install:
   - nuget restore NETStandard.Library.Extension.sln
