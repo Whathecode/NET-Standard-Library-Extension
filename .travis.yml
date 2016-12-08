@@ -13,5 +13,5 @@ install:
   - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release NETStandard.Library.Extension.sln
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./Whathecode.System.Tests/bin/Release/netcoreapp1.0/Whathecode.System.Tests.dll
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./test/Whathecode.System.Tests/bin/Release/netcoreapp1.0/Whathecode.System.Tests.dll
   
