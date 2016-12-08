@@ -8,7 +8,7 @@ matrix:
       dotnet: 1.0.0-preview2-003131
 
 script:
-  # Build the soruce
+  # Build the source
   - cd src/Whathecode.System
   - dotnet restore
   - dotnet build
