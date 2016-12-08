@@ -5,10 +5,10 @@ matrix:
     - os: linux # Ubuntu 14.04
       dist: trusty
       sudo: required
-      dotnet: 1.0.0-preview2-003121
+      dotnet: 1.0.0-preview2-003131
 
 script:
-  # Build the soruce
+  # Build the source
   - cd src/Whathecode.System
   - dotnet restore
   - dotnet build
