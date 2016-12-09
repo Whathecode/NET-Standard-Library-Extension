@@ -1,4 +1,7 @@
-﻿namespace Whathecode.System
+﻿using System;
+
+
+namespace Whathecode.System
 {
 	/// <summary>
 	/// Identifies part of a <see cref="DateTime" /> object.

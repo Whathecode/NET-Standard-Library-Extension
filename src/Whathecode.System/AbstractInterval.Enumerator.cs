@@ -10,8 +10,6 @@ namespace Whathecode.System
 		/// Enumerator which allows you to walk across values inside an interval.
 		/// TODO: Having to pass the methods to operate on the generic type here is quite messy. Is there a better way around this?
 		/// </summary>
-		/// <typeparam name = "T">The type used to specify the interval, and used for the calculations.</typeparam>
-		/// <typeparam name = "TSize">The type used to specify distances in between two values of <see cref="T" />.</typeparam>
 		private class Enumerator : AbstractEnumerator<T>
 		{
 			readonly IInterval<T, TSize> _interval;

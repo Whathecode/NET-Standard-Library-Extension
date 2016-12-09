@@ -85,7 +85,7 @@ namespace Whathecode.System.Collections.Generic
 		/// Traverses nodes up until the tree until a passed evaluation returns true. Null is returned when reaching the top of the tree.
 		/// </summary>
 		/// <param name = "stopTraversal">Function which evaluates whether to stop at a given node or not.</param>
-		/// <returns>The first node encountered where <see cref="stopTraversal" /> returns true. Null in case the top of the tree is reached.</returns>
+		/// <returns>The first node encountered where <paramref name="stopTraversal" /> returns true. Null in case the top of the tree is reached.</returns>
 		public Tree<T> TraverseUpUntil( Func<Tree<T>, bool> stopTraversal )
 		{
 			Tree<T> higherPeer = Parent;

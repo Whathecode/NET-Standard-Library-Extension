@@ -155,7 +155,7 @@ namespace Whathecode.System
 	/// Abstract class specifying an interval from a value, to a value. Borders may be included or excluded. This type is immutable.
 	/// </summary>
 	/// <typeparam name = "T">The type used to specify the interval, and used for the calculations.</typeparam>
-	/// <typeparam name = "TSize">The type used to specify distances in between two values of <see cref="T" />.</typeparam>
+	/// <typeparam name = "TSize">The type used to specify distances in between two values of <typeparamref name="T"/>.</typeparam>
 	public abstract partial class AbstractInterval<T, TSize> : IInterval<T, TSize>
 		where T : IComparable<T>
 		where TSize : IComparable<TSize>
@@ -293,7 +293,7 @@ namespace Whathecode.System
 		/// Map a value from this range, to a value in another range of another type linearly.
 		/// </summary>
 		/// <typeparam name = "TOther">The type of the other range.</typeparam>
-		/// <typeparam name = "TOtherSize">The type used to specify distances in between two values of <see cref="TOther" />.</typeparam>
+		/// <typeparam name = "TOtherSize">The type used to specify distances in between two values of <typeparamref name="TOther" />.</typeparam>
 		/// <param name = "value">The value to map to another range.</param>
 		/// <param name = "range">The range to which to map the value.</param>
 		/// <returns>The value, mapped to the given range.</returns>

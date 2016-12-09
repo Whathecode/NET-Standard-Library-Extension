@@ -22,8 +22,8 @@ namespace Whathecode.System
 		/// </summary>
 		/// <typeparam name = "T">Type of the values in the list.</typeparam>
 		/// <param name = "source">The source for this extension method.</param>
-		/// <param name = "item1">The item to swap with <see cref="item2" />.</param>
-		/// <param name = "item2">The item to swap with <see cref="item1" />.</param>
+		/// <param name = "item1">The item to swap with <paramref name="item2" />.</param>
+		/// <param name = "item2">The item to swap with <paramref name="item1" />.</param>
 		public static void Swap<T>( this IList<T> source, T item1, T item2 )
 		{
 			source.Swap( source.IndexOf( item1 ), source.IndexOf( item2 ) );
@@ -34,8 +34,8 @@ namespace Whathecode.System
 		/// </summary>
 		/// <typeparam name = "T">Type of the values in the list.</typeparam>
 		/// <param name = "source">The source for this extension method.</param>
-		/// <param name = "index1">The index of the item to swap with the item at <see cref="index2" />.</param>
-		/// <param name = "index2">The index of the item to swap with the item at <see cref="index1" />.</param>
+		/// <param name = "index1">The index of the item to swap with the item at <paramref name="index2" />.</param>
+		/// <param name = "index2">The index of the item to swap with the item at <paramref name="index1" />.</param>
 		public static void Swap<T>( this IList<T> source, int index1, int index2 )
 		{
 			if ( source == null )
