@@ -2,19 +2,16 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
-
-    <!-- NuGet package details. -->
     <Authors>Whathecode</Authors>
     <PackageId>NET-Standard-Library-Extension</PackageId>
+    <PackageVersion>1.0.1</PackageVersion>
+    <ProductVersion>1.0.1</ProductVersion>
     <Description>Highly reuseable classes and methods I find to be missing in the .NET Standard Library.</Description>
     <PackageReleaseNotes>First release after porting suitable parts of the old FCL library extension to .NET Standard.</PackageReleaseNotes>
     <Copyright>Copyright (c) 2016 Steven Jeuris</Copyright>
-    
-    <AssemblyName>Whathecode.System</AssemblyName>
-    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.6' ">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <DocumentationFile>Whathecode.System.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="**\*.cs" />
@@ -33,13 +30,5 @@
       <Version>1.6.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
-  <PropertyGroup Label="Configuration">
-    <OutputPath />
-    <DocumentationFile>Whathecode.System.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
-  </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
