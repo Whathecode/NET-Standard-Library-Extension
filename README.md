@@ -2,6 +2,8 @@
 
 This library contains highly reuseable classes and methods I find to be missing in the cross-platform standard library of .NET.
 
+**Requires**: To open the solution and project files, the latest Visual Studio 2017 RC is required ([released on December 12](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes) at time of writing).
+
 Namespaces from the original library are followed as much as possible:
 
 - Helper classes are contained within the corresponding namespace: e.g., a helper class for `System.IO.Path` will be located in `Whathecode.System.IO.PathHelper`.
