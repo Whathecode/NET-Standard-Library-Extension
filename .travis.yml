@@ -1,9 +1,11 @@
 language: csharp
-solution: NET-Standard-Library-Extension.sln
 
+os: linux
+sudo: required
+dist: trusty
 dotnet: 1.0.0-preview2-003131
-mono: none
 env: DOTNETCORE=1
+mono: none
 
 script:
   # Build the source
