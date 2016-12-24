@@ -137,7 +137,7 @@ namespace Whathecode.System.Linq
 				throw new ArgumentException( "No negative value possible.", nameof( select ) );
 			}
 
-			var list = source as T[] ?? source.ToArray();
+			T[] list = source as T[] ?? source.ToArray();
 
 			return @select == 0
 				? new[] { new T[0] }

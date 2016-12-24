@@ -30,14 +30,14 @@ namespace Whathecode.Tests.System
 				};
 
 				// Check all dates.
-				foreach ( var date in withinWeek )
+				foreach ( DateTime date in withinWeek )
 				{
-					var startOfWeek = date.Round( DayOfWeek.Monday );
+					DateTime startOfWeek = date.Round( DayOfWeek.Monday );
 					Assert.Equal( monday, startOfWeek );
 				}
-				foreach ( var date in otherWeek )
+				foreach ( DateTime date in otherWeek )
 				{
-					var startOfWeek = date.Round( DayOfWeek.Monday );
+					DateTime startOfWeek = date.Round( DayOfWeek.Monday );
 					Assert.NotEqual( monday, startOfWeek );
 				}
 

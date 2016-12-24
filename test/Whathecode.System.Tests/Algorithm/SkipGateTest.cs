@@ -4,8 +4,8 @@ using Xunit;
 
 namespace Whathecode.Tests.System.Algorithm
 {
-    public class SkipGateTest
-    {
+	public class SkipGateTest
+	{
 		[Fact]
 		public void OpenOnThird()
 		{
@@ -35,5 +35,5 @@ namespace Whathecode.Tests.System.Algorithm
 
 			Assert.Equal( 4, timesOpened );
 		}
-    }
+	}
 }

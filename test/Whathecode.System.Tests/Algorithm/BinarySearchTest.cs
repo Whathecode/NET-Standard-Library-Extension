@@ -10,7 +10,7 @@ namespace Whathecode.Tests.System.Algorithm
 		[Fact]
 		public void SearchTest()
 		{
-			var numbers = new [] { -10, -8, 0, 10, 500 };
+			int[] numbers = new [] { -10, -8, 0, 10, 500 };
 			var indexerDelegates = new IndexerDelegates<int, int>( index => numbers[ index ], index => index );
 
 			// Object found.

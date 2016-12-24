@@ -2,8 +2,7 @@
 {
 	public class IntInterval : AbstractInterval<int>
 	{
-		protected override bool IsIntegralType { get { return true; } }
-
+		protected override bool IsIntegralType => true;
 
 		public IntInterval( int start, int end )
 			: this( start, true, end, true ) { }

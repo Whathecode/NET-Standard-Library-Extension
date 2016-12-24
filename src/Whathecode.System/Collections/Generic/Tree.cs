@@ -19,11 +19,7 @@ namespace Whathecode.System.Collections.Generic
 		public Tree<T> Parent { get; private set; } 
 
 		readonly List<Tree<T>> _children = new List<Tree<T>>();
-		public IEnumerable<Tree<T>> Children
-		{
-			get { return _children; }
-		}
-
+		public IEnumerable<Tree<T>> Children => _children;
 
 		public Tree( T value )
 		{
@@ -54,7 +50,7 @@ namespace Whathecode.System.Collections.Generic
 				// Leaf doens't exist yet, create full remaining branch.
 				Tree<T> firstNew = null;
 				Tree<T> current = this;
-				foreach ( var leaf in fullBranch )
+				foreach ( T leaf in fullBranch )
 				{
 					current = current.AddLeaf( leaf );
 					if ( firstNew == null )

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -21,7 +22,7 @@ namespace Whathecode.System.IO
 		public static string ReplaceInvalidChars( string path, char validChar )
 		{
 			// TODO: Separate invalid path chars from invalid filename chars?
-			var invalidChars = Path.GetInvalidPathChars().Concat( Path.GetInvalidFileNameChars() );
+			IEnumerable<char> invalidChars = Path.GetInvalidPathChars().Concat( Path.GetInvalidFileNameChars() );
 
 			if ( invalidChars.Contains( validChar ) )
 			{

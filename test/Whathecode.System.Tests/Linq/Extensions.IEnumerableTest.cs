@@ -21,11 +21,11 @@ namespace Whathecode.Tests.System.Linq
 				List<int> shortList = new List<int> { 0, 1, 2 };
 
 				// No repetition allowed.
-				var combinations = toStrings( shortList.Combinations( 2 ) );
+				IEnumerable<string> combinations = toStrings( shortList.Combinations( 2 ) );
 				Assert.True( combinations.ContainsOnly( "01", "02", "12" ) );
 
 				// Repetition allowed.
-				var repeatedCombinations = toStrings( shortList.Combinations( 2, true ) );
+				IEnumerable<string> repeatedCombinations = toStrings( shortList.Combinations( 2, true ) );
 				Assert.True( repeatedCombinations.ContainsOnly( "00", "11", "22", "01", "02", "12" ) );
 			}
 

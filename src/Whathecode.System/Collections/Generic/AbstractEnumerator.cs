@@ -51,11 +51,7 @@ namespace Whathecode.System.Collections.Generic
 			}
 		}
 
-		object IEnumerator.Current
-		{
-			get { return Current; }
-		}
-
+		object IEnumerator.Current => Current;
 
 		public bool MoveNext()
 		{

@@ -14,7 +14,7 @@ namespace Whathecode.System.Linq
 		/// <returns>An IEnumerable{T} that contains the elements that occur after the specified index in the input sequence.</returns>
 		public static IEnumerable<T> Skip<T>( this IList<T> source, int count )
 		{
-			using ( var e = source.GetEnumerator() )
+			using ( IEnumerator<T> e = source.GetEnumerator() )
 			{
 				// MoveNext is only called to enable the exception side effect when the collection was modified.
 				while ( count < source.Count && e.MoveNext() )

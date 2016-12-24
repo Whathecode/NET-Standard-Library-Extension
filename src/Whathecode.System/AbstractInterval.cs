@@ -58,9 +58,7 @@ namespace Whathecode.System
 		/// <param name = "after">The interval in which to store the part after the point, if any, null otherwise.</param>
 		public void Split( T atPoint, SplitOption option, out IInterval<T> before, out IInterval<T> after )
 		{
-			IInterval<T, T> beforeInner;
-			IInterval<T, T> afterInner;
-			Split( atPoint, option, out beforeInner, out afterInner );
+			Split( atPoint, option, out IInterval<T, T> beforeInner, out IInterval<T, T> afterInner );
 			before = ReduceGenerics( beforeInner );
 			after = ReduceGenerics( afterInner );
 		}
@@ -164,26 +162,22 @@ namespace Whathecode.System
 		/// <summary>
 		/// The start of the interval.
 		/// </summary>
-		public T Start { get { return IsReversed ? _end : _start; } }
-
+		public T Start => IsReversed ? _end : _start;
 		readonly T _end;
 		/// <summary>
 		/// The end of the interval.
 		/// </summary>
-		public T End { get { return IsReversed ? _start : _end; } }
-
+		public T End => IsReversed ? _start : _end;
 		readonly bool _isStartIncluded;
 		/// <summary>
 		/// Is the value at the start of the interval included in the interval.
 		/// </summary>
-		public bool IsStartIncluded { get { return IsReversed ? _isEndIncluded : _isStartIncluded; } }
-
+		public bool IsStartIncluded => IsReversed ? _isEndIncluded : _isStartIncluded;
 		readonly bool _isEndIncluded;
 		/// <summary>
 		/// Is the value at the end of the interval included in the interval.
 		/// </summary>
-		public bool IsEndIncluded { get { return IsReversed ? _isStartIncluded : _isEndIncluded; } }
-
+		public bool IsEndIncluded => IsReversed ? _isStartIncluded : _isEndIncluded;
 		/// <summary>
 		/// Determines whether the start of the interval lies before or after the end of the interval. true when after, false when before.
 		/// </summary>
@@ -192,13 +186,11 @@ namespace Whathecode.System
 		/// <summary>
 		/// Get the value in the center of the interval. Rounded to the nearest correct value.
 		/// </summary>
-		public T Center { get { return GetValueAt( 0.5 ); } }
-
+		public T Center => GetValueAt( 0.5 );
 		/// <summary>
 		/// Get the size of the interval.
 		/// </summary>
-		public TSize Size { get { return Subtract( _end, _start ); } }
-
+		public TSize Size => Subtract( _end, _start );
 
 		/// <summary>
 		/// Create a new interval with a specified start and end.
@@ -262,7 +254,7 @@ namespace Whathecode.System
 				return LiesInInterval( position ) ? 1.0 : -1.0;
 			}
 
-			var positionRange = CreateInstance( Start, true, position, true );
+			IInterval<T, TSize> positionRange = CreateInstance( Start, true, position, true );
 			double percentage = Convert( positionRange.Size ) / size;
 
 			// Negate percentage when position lies before the interval.
@@ -363,7 +355,7 @@ namespace Whathecode.System
 		/// <returns>The given range, which excludes all parts lying outside of this range. Null when empty.</returns>
 		public IInterval<T, TSize> Clamp( IInterval<T, TSize> range )
 		{
-			var intersection = Intersection( range );
+			IInterval<T, TSize> intersection = Intersection( range );
 			if ( intersection == null )
 			{
 				return null;
@@ -381,7 +373,7 @@ namespace Whathecode.System
 
 			bool thisIsSmaller = _start.CompareTo( range.Start ) <= 0;
 			bool thisIsBigger = _end.CompareTo( range.End ) >= 0;
-			var clamped = CreateInstance(
+			IInterval<T, TSize> clamped = CreateInstance(
 				thisIsSmaller ? range.Start : _start,
 				thisIsSmaller ? intersection.IsStartIncluded : _isStartIncluded,
 				thisIsBigger ? range.End : _end,
@@ -525,7 +517,7 @@ namespace Whathecode.System
 			int startCompare = _start.CompareTo( interval.Start );
 			int endCompare = _end.CompareTo( interval.End );
 
-			var intersection = CreateInstance(
+			IInterval<T, TSize> intersection = CreateInstance(
 				startCompare > 0 ? _start : interval.Start,
 				startCompare == 0
 					? _isStartIncluded && interval.IsStartIncluded // On matching boundary, only include when they both include the boundary.
@@ -604,7 +596,7 @@ namespace Whathecode.System
 		/// <param name = "stepAction">The operation to execute.</param>
 		public void EveryStepOf( TSize step, Action<T> stepAction )
 		{
-			foreach ( var i in GetValues( step ) )
+			foreach ( T i in GetValues( step ) )
 			{
 				stepAction( i );
 			}
@@ -652,7 +644,7 @@ namespace Whathecode.System
 				isEndIncluded |= include;
 			}
 
-			var extended = CreateInstance( start, isStartIncluded, end, isEndIncluded );
+			IInterval<T, TSize> extended = CreateInstance( start, isStartIncluded, end, isEndIncluded );
 			return IsReversed ? extended.Reverse() : extended;
 		}
 
@@ -715,7 +707,7 @@ namespace Whathecode.System
 			}
 			T end = endExceeded ? limit.End : SubtractSize( _end, endSubtraction );
 
-			var scaled = CreateInstance( start, _isStartIncluded, end, _isEndIncluded );
+			IInterval<T, TSize> scaled = CreateInstance( start, _isStartIncluded, end, _isEndIncluded );
 			return IsReversed ? scaled.Reverse() : scaled;
 		}
 

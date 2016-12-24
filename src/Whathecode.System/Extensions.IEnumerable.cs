@@ -19,7 +19,7 @@ namespace Whathecode.System
 				throw new ArgumentNullException( "All arguments should be non-null." );
 			}
 
-			foreach ( var item in source )
+			foreach ( T item in source )
 			{
 				action( item );
 			}

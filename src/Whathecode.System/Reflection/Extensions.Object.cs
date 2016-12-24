@@ -28,14 +28,12 @@ namespace Whathecode.System.Reflection
 		public static object GetValue( this object source, MemberInfo member )
 		{
 			object value;
-			if ( member is FieldInfo )
+			if ( member is FieldInfo field )
 			{
-				FieldInfo field = (FieldInfo)member;
 				value = field.GetValue( source );
 			}
-			else if ( member is PropertyInfo )
+			else if ( member is PropertyInfo property )
 			{
-				PropertyInfo property = (PropertyInfo)member;
 				value = property.GetValue( source, null );
 			}
 			else
@@ -68,7 +66,7 @@ namespace Whathecode.System.Reflection
 			string[] paths = path.Split( '.' );
 			object currentObject = source;
 
-			foreach ( var subPath in paths )
+			foreach ( string subPath in paths )
 			{
 				TypeInfo type = currentObject.GetType().GetTypeInfo();
 				MemberInfo[] matchingMembers = type.GetMember( subPath );

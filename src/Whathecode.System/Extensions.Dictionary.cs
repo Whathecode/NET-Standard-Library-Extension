@@ -17,8 +17,7 @@ namespace Whathecode.System
 		/// <returns>true when the key was present in the dictionary and the action was performed, false otherwise.</returns>
 		public static bool TryUseValue<TKey, TValue>( this Dictionary<TKey, TValue> source, TKey key, Action<TValue> useValue )
 		{
-			TValue value;
-			if ( source.TryGetValue( key, out value ) )
+			if ( source.TryGetValue( key, out TValue value ) )
 			{
 				useValue( value );
 

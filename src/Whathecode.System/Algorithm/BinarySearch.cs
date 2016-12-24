@@ -58,8 +58,7 @@ namespace Whathecode.System.Algorithm
 			if ( !isFinished )
 			{
 				// Split interval in the middle.
-				IInterval<TIndex> smaller, bigger;
-				range.Split( center, SplitOption.Both, out smaller, out bigger );
+				range.Split( center, SplitOption.Both, out var smaller, out var bigger );
 
 				// Continue recursively in the range in which the object lies.
 				IInterval<TIndex> inRange = orderToCenter > 0 ? bigger : smaller;
@@ -71,7 +70,7 @@ namespace Whathecode.System.Algorithm
 				TObject bigger = indexOperations.GetByIndex( range.End );
 
 				// Find the desired object.
-				TObject foundObject = default( TObject );
+				var foundObject = default( TObject );
 				if ( isObjectFound )
 				{
 					foundObject = centerObject;

@@ -22,12 +22,7 @@ namespace Whathecode.System.Collections.Generic
 		/// <param name = "valueInitializer">The delegate to be called to initialize an uncached value for a given key.</param>
 		public CachedDictionary( Func<TKey, TValue> valueInitializer )
 		{
-			if ( valueInitializer == null )
-			{
-				throw new ArgumentNullException( nameof( valueInitializer ) );
-			}
-
-			_valueInitializer = valueInitializer;
+			_valueInitializer = valueInitializer ?? throw new ArgumentNullException( nameof( valueInitializer ) );
 		}
 
 
@@ -40,8 +35,7 @@ namespace Whathecode.System.Collections.Generic
 		{
 			get
 			{
-				TValue value;
-				if ( !_values.TryGetValue( key, out value ) )
+				if ( !_values.TryGetValue( key, out var value ) )
 				{
 					value = _valueInitializer( key );
 					_values[ key ] = value;
