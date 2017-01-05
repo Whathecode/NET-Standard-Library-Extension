@@ -1,4 +1,4 @@
-# .NET Standard Library Extension [![Build Status](https://travis-ci.org/Whathecode/NET-Standard-Library-Extension.svg?branch=master)](https://travis-ci.org/Whathecode/NET-Standard-Library-Extension)
+﻿# .NET Standard Library Extension [![Build Status](https://travis-ci.org/Whathecode/NET-Standard-Library-Extension.svg?branch=master)](https://travis-ci.org/Whathecode/NET-Standard-Library-Extension) (Currently failing [since Travis CI does not seem to support C# 7.0](https://github.com/Whathecode/NET-Standard-Library-Extension/issues/7).)
 
 This library contains highly reuseable classes and methods I find to be missing in the cross-platform standard library of .NET.
 
