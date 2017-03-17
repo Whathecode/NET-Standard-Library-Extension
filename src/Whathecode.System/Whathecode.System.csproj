@@ -1,6 +1,6 @@
-<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk">
+﻿<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard1.5</TargetFramework>
     <Authors>Whathecode</Authors>
     <PackageId>NET-Standard-Library-Extension</PackageId>
     <PackageVersion>1.0.1</PackageVersion>
@@ -11,16 +11,9 @@
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <DocumentationFile>Whathecode.System.xml</DocumentationFile>
+    <Version>1.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
-    <EmbeddedResource Include="compiler\resources\**\*" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="project.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="NETStandard.Library" Version="1.6.1" />
   </ItemGroup>
 </Project>
