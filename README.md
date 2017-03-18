@@ -5,7 +5,7 @@ This library contains highly reuseable classes and methods I find to be missing 
 
 **Requires**:
 
-- To open the solution and project files, the latest Visual Studio 2017 RC is required ([released on December 15](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes) at time of writing).
+- To open the solution and project files, Visual Studio 2017 is required.
 - The test project requires the [.NET Core 1.1 SDK](https://www.microsoft.com/net/download/core).
 
 Namespaces from the original library are followed as much as possible:
