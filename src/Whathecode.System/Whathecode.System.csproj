@@ -6,7 +6,7 @@
     <PackageVersion>1.0.1</PackageVersion>
     <ProductVersion>1.0.1</ProductVersion>
     <Description>Highly reuseable classes and methods I find to be missing in the .NET Standard Library.</Description>
-    <PackageReleaseNotes>First release after porting suitable parts of the old FCL library extension to .NET Standard.</PackageReleaseNotes>
+    <PackageReleaseNotes>Rollback to .NET Standard 1.5 in order to allow importing the library in .NET Framework projects (like WPF).</PackageReleaseNotes>
     <Copyright>Copyright (c) 2016 Steven Jeuris</Copyright>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
