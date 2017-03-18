@@ -13,7 +13,4 @@
     <DocumentationFile>Whathecode.System.xml</DocumentationFile>
     <Version>1.0.1</Version>
   </PropertyGroup>
-  <ItemGroup>
-    <None Include="project.json" />
-  </ItemGroup>
 </Project>
